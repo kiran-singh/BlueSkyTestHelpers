@@ -1,0 +1,7 @@
+c:\users\kiran\documents\visual studio 2013\Projects\BlueSky.TestHelpers\BlueSky.TestHelpers\bin\Debug\BlueSky.TestHelpers.dll
+c:\users\kiran\documents\visual studio 2013\Projects\BlueSky.TestHelpers\BlueSky.TestHelpers\bin\Debug\BlueSky.TestHelpers.pdb
+c:\users\kiran\documents\visual studio 2013\Projects\BlueSky.TestHelpers\BlueSky.TestHelpers\bin\Debug\BlueSky.Common.dll
+c:\users\kiran\documents\visual studio 2013\Projects\BlueSky.TestHelpers\BlueSky.TestHelpers\bin\Debug\BlueSky.Common.pdb
+c:\users\kiran\documents\visual studio 2013\Projects\BlueSky.TestHelpers\BlueSky.TestHelpers\obj\Debug\BlueSky.TestHelpers.csprojResolveAssemblyReference.cache
+c:\users\kiran\documents\visual studio 2013\Projects\BlueSky.TestHelpers\BlueSky.TestHelpers\obj\Debug\BlueSky.TestHelpers.dll
+c:\users\kiran\documents\visual studio 2013\Projects\BlueSky.TestHelpers\BlueSky.TestHelpers\obj\Debug\BlueSky.TestHelpers.pdb

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueSky.TestHelpers", "BlueSky.TestHelpers\BlueSky.TestHelpers.csproj", "{31DD4A10-DF32-496C-A5D3-8E811F4D896E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueSky.TestHelpers.Tests", "BlueSky.TestHelpers.Tests\BlueSky.TestHelpers.Tests.csproj", "{5CA08027-3ADD-4227-85CE-8C1F9B88A79F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31DD4A10-DF32-496C-A5D3-8E811F4D896E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31DD4A10-DF32-496C-A5D3-8E811F4D896E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31DD4A10-DF32-496C-A5D3-8E811F4D896E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31DD4A10-DF32-496C-A5D3-8E811F4D896E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA08027-3ADD-4227-85CE-8C1F9B88A79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA08027-3ADD-4227-85CE-8C1F9B88A79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA08027-3ADD-4227-85CE-8C1F9B88A79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA08027-3ADD-4227-85CE-8C1F9B88A79F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
