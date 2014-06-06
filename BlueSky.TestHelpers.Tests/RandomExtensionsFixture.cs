@@ -22,6 +22,7 @@ namespace BlueSky.TestHelpers.Tests
             _random = new Random();
         }
 
+
         [Test]
         public void ListFor_MinAndMaxProvided_ReturnsListBetweenMinAndMax()
         {
