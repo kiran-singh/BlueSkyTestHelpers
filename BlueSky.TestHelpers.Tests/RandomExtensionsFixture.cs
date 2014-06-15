@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using BlueSky.Common;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -22,37 +23,21 @@ namespace BlueSky.TestHelpers.Tests
             _random = new Random();
         }
 
-
         [Test]
-        public void ListFor_MinAndMaxProvided_ReturnsListBetweenMinAndMax()
+        public void ExclusiveInts_RandomAndCountProvided_ReturnsListWithExclusiveInts()
         {
             // Arrange
-            var next = _random.Next(50, 100);
-            var min = RandomExtensions.MinForList + next;
-            var max = RandomExtensions.MaxForList + next;
+            var count = _random.Next(20, 50);
 
             // Act
-            var actual = _random.ListFor<Sample>(min, max);
+            var actual = _random.ExclusiveInts(count);
 
             // Assert
-            actual.Count.Should().BeGreaterThan(min);
-            actual.Count.Should().BeLessThan(max);
+            actual.ForEach(x => actual.Count(y => y == x).Should().Be(1));
         }
 
         [Test]
-        public void ListFor_NoMinAndMaxProvided_ReturnsListBetweenDefaultMinAndMax()
-        {
-            // Arrange
-            // Act
-            var actual = _random.ListFor<Sample>();
-
-            // Assert
-            Assert.IsTrue(actual.Count > RandomExtensions.MinForList);
-            Assert.IsTrue(actual.Count < RandomExtensions.MaxForList);
-        }
-
-        [Test]
-        public void FilledListFor_ActionProvided_MinAndMaxProvided_ReturnsListBetweenMinAndMax()
+        public void FilledListFor_ActionProvided_NoMinAndMaxProvided_ReturnsListBetweenDefaultMinAndMax()
         {
             // Arrange
             // Act
@@ -63,8 +48,8 @@ namespace BlueSky.TestHelpers.Tests
             });
 
             // Assert
-            Assert.IsTrue(actual.Count > RandomExtensions.MinForList);
-            Assert.IsTrue(actual.Count < RandomExtensions.MaxForList);
+            actual.Count.Should().BeGreaterOrEqualTo(RandomExtensions.MinForList);
+            actual.Count.Should().BeLessOrEqualTo(RandomExtensions.MaxForList);
             actual.ToList().ForEach(x =>
             {
                 x.Id.Should().BeGreaterThan(0);
@@ -73,7 +58,7 @@ namespace BlueSky.TestHelpers.Tests
         }
 
         [Test]
-        public void FilledListFor_ActionProvided_NoMinAndMaxProvided_ReturnsListBetweenDefaultMinAndMax()
+        public void FilledListFor_ActionProvided_MinAndMaxProvided_ReturnsListBetweenMinAndMax()
         {
             // Arrange
             var next = _random.Next(50, 100);
@@ -88,13 +73,41 @@ namespace BlueSky.TestHelpers.Tests
             }, min, max);
 
             // Assert
-            Assert.IsTrue(actual.Count > min);
-            Assert.IsTrue(actual.Count < max);
+            actual.Count.Should().BeGreaterOrEqualTo(min);
+            actual.Count.Should().BeLessOrEqualTo(max);
             actual.ToList().ForEach(x =>
             {
                 x.Id.Should().BeGreaterThan(0);
                 x.Name.Should().NotBeNullOrEmpty();
             });
+        }
+
+        [Test]
+        public void ListFor_MinAndMaxProvided_ReturnsListBetweenMinAndMax()
+        {
+            // Arrange
+            var next = _random.Next(50, 100);
+            var min = RandomExtensions.MinForList + next;
+            var max = RandomExtensions.MaxForList + next;
+
+            // Act
+            var actual = _random.ListFor<Sample>(min, max);
+
+            // Assert
+            actual.Count.Should().BeGreaterOrEqualTo(min);
+            actual.Count.Should().BeLessOrEqualTo(max);
+        }
+
+        [Test]
+        public void ListFor_NoMinAndMaxProvided_ReturnsListBetweenDefaultMinAndMax()
+        {
+            // Arrange
+            // Act
+            var actual = _random.ListFor<Sample>();
+
+            // Assert
+            actual.Count.Should().BeGreaterOrEqualTo(RandomExtensions.MinForList);
+            actual.Count.Should().BeLessOrEqualTo(RandomExtensions.MaxForList);
         }
     }
 }
